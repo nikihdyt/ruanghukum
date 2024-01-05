@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.ruanghukum.views.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_consultationFragment"
+            app:destination="@id/navigation_consultation" />
+        <action
+            android:id="@+id/action_homeFragment_to_documentPrepFragment"
+            app:destination="@id/documentPrepFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aIChatFragment"
+            app:destination="@id/AIChatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_updates"
+        android:name="com.example.ruanghukum.views.updates.UpdatesFragment"
+        android:label="@string/title_updates"
+        tools:layout="@layout/fragment_updates" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.ruanghukum.views.notification.NotificationFragment"
+        android:label="@string/title_notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.ruanghukum.views.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_consultation"
+        android:name="com.example.ruanghukum.views.consultation.home.ConsultationFragment"
+        android:label="@string/title_consultation"
+        tools:layout="@layout/fragment_consultation" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/documentPrepFragment"
+        android:name="com.example.ruanghukum.views.documentPrep.DocumentPrepFragment"
+        android:label="fragment_document_prep"
+        tools:layout="@layout/fragment_document_prep" >
+    </fragment>
+    <fragment
+        android:id="@+id/AIChatFragment"
+        android:name="com.example.ruanghukum.views.aiChat.AIChatFragment"
+        android:label="fragment_a_i_chat"
+        tools:layout="@layout/fragment_a_i_chat" >
+    </fragment>
+
+</navigation>
