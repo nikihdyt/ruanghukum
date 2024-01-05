@@ -30,6 +30,11 @@ class AIChatFragment : Fragment() {
     }
 
     private fun setupView() {
+        with(binding) {
+            btnBack.setOnClickListener{
+                    activity?.onBackPressed()
+            }
+        }
     }
 
     override fun onDestroy() {
