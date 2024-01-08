@@ -7,6 +7,7 @@
     <color name="red">#FF4844</color>
     <color name="light_blue">#D5EAFF</color>
     <color name="blue">#2D60DF</color>
+    <color name="blue2">#4076FF</color>
     <color name="dark_blue">#3B495A</color>
     <color name="light_purple">#F7EDFB</color>
 </resources>
