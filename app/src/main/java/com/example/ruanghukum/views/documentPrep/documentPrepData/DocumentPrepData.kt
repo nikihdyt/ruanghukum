@@ -42,10 +42,10 @@ class DocumentPrepData : Fragment() {
             btnBack.setOnClickListener {
                 activity?.onBackPressed()
             }
-//            btnCreateDocument.setOnClickListener {
-//                Navigation.findNavController(it)
-//                    .navigate(R.id.action_documentPrepData_to_documentPrepPreview)
-//            }
+            btnCreateDocument.setOnClickListener {
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_documentPrepData_to_documentPrepPreview)
+            }
         }
     }
 }

@@ -51,10 +51,10 @@ class DocumentPrepFragment : Fragment() {
             btnBack.setOnClickListener {
                 activity?.onBackPressed()
             }
-//            documentPrepBanner.setOnClickListener {
-//                Navigation.findNavController(it)
-//                    .navigate(R.id.action_documentPrepFragment_to_documentPrepData)
-//            }
+            documentPrepBanner.setOnClickListener {
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_documentPrepFragment_to_documentPrepData)
+            }
         }
 
         binding.rvCategories1.adapter = DocumentCategoryAdapter(categories1)
