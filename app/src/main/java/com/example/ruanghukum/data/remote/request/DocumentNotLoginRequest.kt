@@ -1,8 +1,11 @@
-package com.example.ruanghukum.data.remote.response
+package com.example.ruanghukum.data.remote.request
 
+import kotlinx.parcelize.Parcelize
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class DocumetNotLoginResponse(
+@Parcelize
+data class DocumentNotLoginRequest(
 
 	@field:SerializedName("penyewa")
 	val penyewa: Penyewa? = null,
@@ -12,8 +15,25 @@ data class DocumetNotLoginResponse(
 
 	@field:SerializedName("pemilik")
 	val pemilik: Pemilik? = null
-)
+) : Parcelable
 
+@Parcelize
+data class Biaya(
+
+	@field:SerializedName("jangka_waktu")
+	val jangkaWaktu: String? = null,
+
+	@field:SerializedName("tanggal_mulai")
+	val tanggalMulai: String? = null,
+
+	@field:SerializedName("tanggal_berakhir")
+	val tanggalBerakhir: String? = null,
+
+	@field:SerializedName("harga_sewa")
+	val hargaSewa: String? = null
+) : Parcelable
+
+@Parcelize
 data class Penyewa(
 
 	@field:SerializedName("tempat_ttl")
@@ -30,8 +50,9 @@ data class Penyewa(
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class SewaRuko(
 
 	@field:SerializedName("biaya")
@@ -51,8 +72,9 @@ data class SewaRuko(
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Pemilik(
 
 	@field:SerializedName("tempat_ttl")
@@ -69,19 +91,4 @@ data class Pemilik(
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null
-)
-
-data class Biaya(
-
-	@field:SerializedName("jangka_waktu")
-	val jangkaWaktu: String? = null,
-
-	@field:SerializedName("tanggal_mulai")
-	val tanggalMulai: String? = null,
-
-	@field:SerializedName("tanggal_berakhir")
-	val tanggalBerakhir: String? = null,
-
-	@field:SerializedName("harga_sewa")
-	val hargaSewa: String? = null
-)
+) : Parcelable
