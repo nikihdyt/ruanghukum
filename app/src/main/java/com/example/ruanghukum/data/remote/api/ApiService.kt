@@ -40,12 +40,12 @@ interface ApiService {
         @Field("message") message: String
     ): AiChatResponse
 
-    @FormUrlEncoded
     @POST("document")
     suspend fun createDocumentNotLogin(
-        @Query("category") category: String = "sewa-ruko",
+        @Query("category") category: String,
         @Body request: DocumentNotLoginRequest
     ): DocumentNotLoginResponse
+
 
 
 }

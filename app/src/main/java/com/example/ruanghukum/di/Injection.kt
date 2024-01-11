@@ -14,7 +14,7 @@ import com.example.ruanghukum.repository.UserRepository
 object Injection {
 
     fun provideAuthRepository(context: Context): AuthRepository {
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getApiService(context)
         return AuthRepository.getInstance(apiService)
     }
 
@@ -24,7 +24,7 @@ object Injection {
     }
 
     fun provideAiChatRepository(context: Context): AiChatRepository {
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getApiService(context)
         return AiChatRepository.getInstance(apiService)
     }
 
@@ -33,7 +33,7 @@ object Injection {
     }
 
     fun provideDocRepository(context: Context): DocumentRepository {
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getApiService(context)
         return DocumentRepository.getInstance(apiService)
     }
 }
