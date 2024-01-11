@@ -43,7 +43,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("document")
     suspend fun createDocumentNotLogin(
-        @Query("category") category: String,
+        @Query("category") category: String = "sewa-ruko",
         @Body request: DocumentNotLoginRequest
     ): DocumentNotLoginResponse
 
