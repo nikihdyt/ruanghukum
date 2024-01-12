@@ -34,7 +34,7 @@ object Injection {
     }
 
     fun provideBlogRepository(context: Context): BlogRepository {
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getApiService(context)
         return BlogRepository.getInstance(apiService)
     }
 
