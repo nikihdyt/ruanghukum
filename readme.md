@@ -33,12 +33,15 @@ We are proud to present the following features:
 <div align="center">
     <img src="app/src/main/assets/readme/gemini-ai.png" alt="AI-Based Consultation" width="200">
 </div>
+
 - **Legal Document Templates**: Choose from a variety of professionally crafted legal document templates designed to meet the specific needs of the Indonesian legal system.
 <div align="center">
     <img src="app/src/main/assets/readme/document-1.png" alt="Document repository" width="200">
     <img src="app/src/main/assets/readme/document-2.png" alt="Document repository" width="200">
 </div>
+
 - **Lawyer Directory**: Find the perfect lawyer for your needs with our comprehensive lawyer directory, tailored to the legal expertise.
+
 <div align="center">
     <img src="app/src/main/assets/readme/konsultasi-ahli.png" alt="Lawyer directory" width="200">
     <img src="app/src/main/assets/readme/konsultasi-ahli1.png" alt="Lawyer directory" width="200">
