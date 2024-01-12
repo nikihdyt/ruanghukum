@@ -23,7 +23,8 @@ Meet the incredible minds behind RuangHukum:
   - [Table of Contents](#table-of-contents)
   - [Mobile - Main Features](#mobile---main-features)
   - [Web Version](#web-version)
-  - [How to use RuangHukum](#how-to-use-ruanghukum)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 
 ## Mobile - Main Features
 
@@ -57,13 +58,16 @@ Additionally, we've introduced a web version of RuangHukum, accessible at [ruang
     <img src="app/src/main/assets/readme/website-version.png" alt="RuangHukum website" >
 </div>
 
-## How to use RuangHukum
+## Prerequisites
 
-1. Clone this repository
-2. Open the project in Android Studio
-3. Run the project
-4. Enjoy the app!
+- [Android Studio](https://developer.android.com/studio) installed on your machine
+- Android device or emulator
 
-```bash
-git clone
-```
+## Installation
+
+1. Clone the repository:
+   git clone https://github.com/nikihdyt/ruanghukum.git
+2. Open Android Studio.
+3. In Android Studio, go to File -> New -> Import Project and select the cloned project.
+4. Wait for the project to sync and build.
+5. Run project on your emulator or android device.
