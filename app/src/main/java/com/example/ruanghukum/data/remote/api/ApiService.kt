@@ -1,10 +1,12 @@
 package com.example.ruanghukum.data.remote.api
 
 import com.example.ruanghukum.data.remote.response.AiChatResponse
+import com.example.ruanghukum.data.remote.response.GetAllBlogResponse
 import com.example.ruanghukum.data.remote.response.LoginResponse
 import com.example.ruanghukum.data.remote.response.RegisterResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -35,4 +37,7 @@ interface ApiService {
     suspend fun getAiMessage(
         @Field("message") message: String
     ): AiChatResponse
+
+    @GET("blog")
+    suspend fun getBlog(): GetAllBlogResponse
 }
