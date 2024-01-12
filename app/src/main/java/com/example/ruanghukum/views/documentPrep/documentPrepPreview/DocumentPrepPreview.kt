@@ -1,5 +1,7 @@
 package com.example.ruanghukum.views.documentPrep.documentPrepPreview
 
+import android.app.Activity
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +24,10 @@ class DocumentPrepPreview : Fragment() {
 
     private var _binding: FragmentDocumentPrepPreviewBinding? = null
     private val binding get() = _binding!!
+    private var documentPath: String? = null
+
+    private val SAVE_DOCUMENT_REQUEST_CODE = 42
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,16 +46,61 @@ class DocumentPrepPreview : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupView()
-        val documentPath = arguments?.getString("documentPath")
+        documentPath = arguments?.getString("documentPath")
         Log.d("documentPath", "$documentPath")
 
         // TODO: Use the ViewModel
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SAVE_DOCUMENT_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            data?.data?.let { uri ->
+                documentPath?.let { path ->
+                    GlobalScope.launch(Dispatchers.IO) {
+                        try {
+                            val connection = URL(path).openConnection()
+                            connection.connect()
+
+                            val input = connection.getInputStream()
+                            val output = requireContext().contentResolver.openOutputStream(uri)
+
+                            val buffer = ByteArray(4 * 1024)
+                            var bytesRead: Int
+
+                            while (input.read(buffer).also { bytesRead = it } != -1) {
+                                output?.write(buffer, 0, bytesRead)
+                            }
+
+                            output?.close()
+                            input.close()
+
+                            launch(Dispatchers.Main) {
+                                // You can perform UI operations or show a message after successful download
+                                Log.d("PDFView", "Document downloaded successfully: $uri")
+                            }
+                        } catch (e: Exception) {
+                            Log.e("PDFView", "Failed to download document: ${e.message}")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     private fun setupView() {
         with(binding) {
             btnBack.setOnClickListener {
                 activity?.onBackPressed()
+            }
+            btnDownload.setOnClickListener {
+                val documentUrl = arguments?.getString("documentPath")
+                if (!documentUrl.isNullOrBlank()) {
+                    downloadDocument(documentUrl)
+                } else {
+                    Log.e("PDFView", "Document URL is null or blank.")
+                }
             }
         }
 
@@ -106,4 +157,17 @@ class DocumentPrepPreview : Fragment() {
             return null
         }
     }
+
+    private fun downloadDocument(url: String) {
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "application/pdf" // Set the MIME type to PDF or the appropriate type
+            putExtra(Intent.EXTRA_TITLE, "downloaded_document.pdf")
+        }
+
+        startActivityForResult(intent, SAVE_DOCUMENT_REQUEST_CODE)
+    }
+
+
+
 }
