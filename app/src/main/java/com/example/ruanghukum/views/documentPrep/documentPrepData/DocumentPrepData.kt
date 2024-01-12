@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.ruanghukum.R
@@ -48,7 +49,16 @@ class DocumentPrepData : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupView()
+        observeLoading()
 
+        viewModel.documentStatus.observe(viewLifecycleOwner) { result ->
+            if (result.isSuccess) {
+                val documentPath = result.getOrNull()?.data?.payload?.path
+                documentPath?.let {
+                    viewModel.navigateToDocumentPrepPreview(Navigation.findNavController(requireView()), it)
+                }
+            }
+        }
     }
 
     private fun setupView() {
@@ -91,6 +101,7 @@ class DocumentPrepData : Fragment() {
                     && tempatTtlPenyewa.isNotBlank() && nomorKtpPenyewa.isNotBlank() && pekerjaanPenyewa.isNotBlank()
                     && alamatPenyewa.isNotBlank()
                 ) {
+                    progressBar.visibility = View.VISIBLE
                     // Inisialisasi objek DocumentNotLoginRequest dengan data dari pengguna
                     val documentReq = DocumentNotLoginRequest(
                         penyewa = Penyewa(
@@ -123,7 +134,8 @@ class DocumentPrepData : Fragment() {
                     )
 
                     // Panggil fungsi untuk membuat dokumen
-                    viewModel.createDocument(category = "sewa-ruko", documentReq)
+                    viewModel.createDocumentPrep(category = "sewa-ruko", documentReq)
+                    progressBar.visibility = View.GONE
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -134,4 +146,11 @@ class DocumentPrepData : Fragment() {
             }
         }
     }
+
+    private fun observeLoading() {
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
+    }
+
 }

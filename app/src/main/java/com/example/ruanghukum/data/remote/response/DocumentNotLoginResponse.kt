@@ -8,10 +8,10 @@ import com.google.gson.annotations.SerializedName
 data class DocumentNotLoginResponse(
 
 	@field:SerializedName("data")
-	val data: Data? = null,
+	val data: DataDocument? = null,
 
 	@field:SerializedName("meta")
-	val meta: Meta? = null
+	val meta: MetaDocument? = null
 ) : Parcelable
 
 @Parcelize
@@ -35,7 +35,7 @@ data class PayloadDocument(
 data class DataDocument(
 
 	@field:SerializedName("payload")
-	val payload: Payload? = null,
+	val payload: PayloadDocument? = null,
 
 	@field:SerializedName("type")
 	val type: String? = null

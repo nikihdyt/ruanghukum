@@ -60,6 +60,10 @@
             android:id="@+id/action_documentPrepFragment_to_documentPrepData"
             app:destination="@id/documentPrepData" />
 
+        <action
+            android:id="@+id/action_documentPrepFragment_to_documentPrepPreview"
+            app:destination="@id/documentPrepPreview" />
+
     </fragment>
     <fragment
         android:id="@+id/AIChatFragment"
