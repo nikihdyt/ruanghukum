@@ -21,23 +21,34 @@ Meet the incredible minds behind RuangHukum:
   - [Overview](#overview)
   - [Team Members](#team-members)
   - [Table of Contents](#table-of-contents)
-  - [Features](#features)
+  - [Mobile - Main Features](#mobile---main-features)
+  - [Web Version](#web-version)
   - [Installation](#installation)
 
-## Features
+## Mobile - Main Features
 
-List the key features of your pitch deck application. Consider using bullet points for better readability.
+We are proud to present the following features:
 
 - AI Based consultation: Access legal advice through cutting-edge AI technology, providing personalized and efficient consultations, and of course the solution is based on the Indonesian legal landscape.
 <div align="center">
     <img src="app/src/main/assets/readme/gemini-ai.png" alt="AI-Based Consultation" width="200">
 </div>
 - Legal Document Templates: Choose from a variety of professionally crafted legal document templates designed to meet the specific needs of the Indonesian legal system.
-- Lawyer Directory: Find the perfect lawyer for your needs with our comprehensive lawyer directory, tailored to the legal expertise.
-- <div align="center">
-    <img src="app/src/main/assets/readme/document-1.png" alt="Lawyer directory" width="200">
-    <img src="app/src/main/assets/readme/document-2.png" alt="Lawyer directory" width="200">
+<div align="center">
+    <img src="app/src/main/assets/readme/document-1.png" alt="Document repository" width="200">
+    <img src="app/src/main/assets/readme/document-2.png" alt="Document repository" width="200">
 </div>
+- Lawyer Directory: Find the perfect lawyer for your needs with our comprehensive lawyer directory, tailored to the legal expertise.
+<div align="center">
+    <img src="app/src/main/assets/readme/konsultasi-ahli.png" alt="Lawyer directory" width="200">
+    <img src="app/src/main/assets/readme/konsultasi-ahli1.png" alt="Lawyer directory" width="200">
+</div>
+
+## Web Version
+
+Right now, our website serves as a marketing platform to promote our main mobile application.
+
+Additionally, we've introduced a web version of RuangHukum, accessible at [ruanghukum](https://ruanghukum-api.vercel.app/). Please note that the web version is currently in development, offering a limited set of features, primarily focused on marketing efforts.
 
 ## Installation
 
