@@ -2,16 +2,18 @@
 
 ## Overview
 
-Hi this is RuangHukum, where we are committed to ensuring that access to justice is a fundamental right for everyone. Our passionate team is dedicated to making legal services more accessible and affordable. Through our platform, we empower individuals to find the right lawyer for their specific needs, offering AI-based consultations, legal advice at a fair price, and a collection of legal document templates.
-  ![AI-Based Consultation](app/src/main/assets/readme/overview.png)
+<div align="center">
+  <p>Hi, this is RuangHukum, where we are committed to ensuring that access to justice is a fundamental right for everyone. Our passionate team is dedicated to making legal services more accessible and affordable. Through our platform, we empower individuals to find the right lawyer for their specific needs, offering AI-based consultations, legal advice at a fair price, and a collection of legal document templates.</p>
+  <img src="app/src/main/assets/readme/overview.png" alt="AI-Based Consultation">
+</div>
 
 ## Team Members
 
 Meet the incredible minds behind RuangHukum:
 
-Hacker: R. Dendi Anugerah Candra Diningrat
-Hipster: Niki Hidayati
-Hustler: Rahul Rahmatullah
+- **Hipster:** Niki Hidayati
+- **Hustler:** Rahul Rahmatullah
+- **Hacker:** R. Dendi Anugerah Candra Diningrat
 
 ## Table of Contents
 
