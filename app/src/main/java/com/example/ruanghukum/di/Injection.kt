@@ -7,6 +7,7 @@ import com.example.ruanghukum.data.local.datastore.dataStore
 import com.example.ruanghukum.data.remote.api.ApiConfig
 import com.example.ruanghukum.repository.AiChatRepository
 import com.example.ruanghukum.repository.AuthRepository
+import com.example.ruanghukum.repository.BlogRepository
 import com.example.ruanghukum.repository.DocumentRepository
 import com.example.ruanghukum.repository.LocalAiChatRepository
 import com.example.ruanghukum.repository.UserRepository
@@ -30,6 +31,11 @@ object Injection {
 
     fun provideLocalAiChatRepository(application: Application): LocalAiChatRepository {
         return LocalAiChatRepository(application)
+    }
+
+    fun provideBlogRepository(context: Context): BlogRepository {
+        val apiService = ApiConfig.getApiService()
+        return BlogRepository.getInstance(apiService)
     }
 
     fun provideDocRepository(context: Context): DocumentRepository {

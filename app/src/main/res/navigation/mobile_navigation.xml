@@ -19,6 +19,16 @@
         <action
             android:id="@+id/action_homeFragment_to_aIChatFragment"
             app:destination="@id/AIChatFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment"
+            app:popUpTo="@+id/navigation_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_updates"
+            app:destination="@id/navigation_updates"
+            app:popUpTo="@+id/navigation_home"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -113,5 +123,9 @@
         tools:layout="@layout/fragment_document_prep_data">
 
     </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.example.ruanghukum.views.article.articleDetail.ArticleDetailFragment"
+        android:label="ArticleDetailFragment" />
 
 </navigation>
