@@ -8,12 +8,14 @@ import com.example.ruanghukum.di.Injection
 import com.example.ruanghukum.repository.AiChatRepository
 import com.example.ruanghukum.repository.AuthRepository
 import com.example.ruanghukum.repository.BlogRepository
+import com.example.ruanghukum.repository.DocumentRepository
 import com.example.ruanghukum.repository.LocalAiChatRepository
 import com.example.ruanghukum.repository.UserRepository
 import com.example.ruanghukum.views.aiChat.AIChatViewModel
 import com.example.ruanghukum.views.auth.login.LoginViewModel
 import com.example.ruanghukum.views.auth.register.RegisterViewModel
 import com.example.ruanghukum.views.home.HomeViewModel
+import com.example.ruanghukum.views.documentPrep.documentPrepData.DocumentPrepDataViewModel
 import com.example.ruanghukum.views.profile.ProfileViewModel
 import com.example.ruanghukum.views.updates.UpdatesViewModel
 
@@ -23,6 +25,7 @@ class ViewModelFactory(
     private val aiChatRepo: AiChatRepository,
     private val localAiChatRepo: LocalAiChatRepository,
     private val blogRepo: BlogRepository,
+    private val docRepo: DocumentRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
@@ -46,6 +49,9 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(UpdatesViewModel::class.java) -> {
                 UpdatesViewModel(blogRepo) as T
             }
+            modelClass.isAssignableFrom(DocumentPrepDataViewModel::class.java) -> {
+                DocumentPrepDataViewModel(docRepo) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
@@ -63,6 +69,7 @@ class ViewModelFactory(
                         Injection.provideAiChatRepository(context),
                         Injection.provideLocalAiChatRepository(context.applicationContext as Application),
                         Injection.provideBlogRepository(context),
+                        Injection.provideDocRepository(context)
                     )
                 }
             }

@@ -55,6 +55,10 @@ class DocumentPrepFragment : Fragment() {
                 Navigation.findNavController(it)
                     .navigate(R.id.action_documentPrepFragment_to_documentPrepData)
             }
+//            documentPrepBanner.setOnClickListener {
+//                Navigation.findNavController(it)
+//                    .navigate(R.id.action_documentPrepFragment_to_documentPrepPreview)
+//            }
         }
 
         binding.rvCategories1.adapter = DocumentCategoryAdapter(categories1)
