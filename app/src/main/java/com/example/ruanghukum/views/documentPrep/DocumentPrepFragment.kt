@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.ruanghukum.R
@@ -51,17 +52,15 @@ class DocumentPrepFragment : Fragment() {
             btnBack.setOnClickListener {
                 activity?.onBackPressed()
             }
-            documentPrepBanner.setOnClickListener {
+            sewaRukoCard.setOnClickListener {
                 Navigation.findNavController(it)
                     .navigate(R.id.action_documentPrepFragment_to_documentPrepData)
             }
-//            documentPrepBanner.setOnClickListener {
-//                Navigation.findNavController(it)
-//                    .navigate(R.id.action_documentPrepFragment_to_documentPrepPreview)
-//            }
+            sewaRumahCard.setOnClickListener {
+                Toast.makeText(requireContext(), "Dokumen Belum Tersedia", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        binding.rvCategories1.adapter = DocumentCategoryAdapter(categories1)
         binding.rvCategories2.adapter = DocumentCategoryAdapter(categories2)
     }
 
