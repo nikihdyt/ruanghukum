@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
                                     UserModel(
                                         email = resultState.data.data!!.payload!!.email!!,
                                         name = resultState.data.data.payload!!.fullname!!,
-                                        picture = "",
+                                        picture = resultState.data.data.payload.profilePicture ?: "",
                                         token = resultState.data.data.token!!
                                     )
                                 )
