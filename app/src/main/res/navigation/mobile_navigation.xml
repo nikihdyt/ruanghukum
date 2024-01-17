@@ -33,7 +33,11 @@
         android:id="@+id/navigation_updates"
         android:name="com.example.ruanghukum.views.updates.UpdatesFragment"
         android:label="@string/title_updates"
-        tools:layout="@layout/fragment_updates" />
+        tools:layout="@layout/fragment_updates" >
+        <action
+            android:id="@+id/action_navigation_updates_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
