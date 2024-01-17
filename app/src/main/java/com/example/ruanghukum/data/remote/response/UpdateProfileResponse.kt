@@ -7,19 +7,21 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class UpdateProfileResponse(
 
-	@field:SerializedName("data")
-	val data: DataUpdateProfile? = null,
-
 	@field:SerializedName("meta")
-	val meta: MetaUpdateProfile? = null
+	val metaUpdateProfile: MetaUpdateProfile? = null,
+
+	@field:SerializedName("data")
+	val dataUpdateProfile: DataUpdateProfile? = null
 ) : Parcelable
 
 @Parcelize
-data class DataUpdateProfile(
+data class MetaUpdateProfile(
 
-	@field:SerializedName("data")
-	val data: DataUser? = null,
+	@field:SerializedName("message")
+	val message: String? = null,
 
+	@field:SerializedName("status")
+	val status: Int? = null
 ) : Parcelable
 
 @Parcelize
@@ -33,21 +35,18 @@ data class PayloadUpdateProfile(
 ) : Parcelable
 
 @Parcelize
-data class DataUser(
+data class DataUpdateProfile(
 
-	@field:SerializedName("type")
-	val type: String? = null,
-
-	@field:SerializedName("payload")
-	val payload: PayloadUpdateProfile? = null
+	@field:SerializedName("data")
+	val dataUser: DataUser? = null
 ) : Parcelable
 
 @Parcelize
-data class MetaUpdateProfile(
+data class DataUser(
 
-	@field:SerializedName("message")
-	val message: String? = null,
+	@field:SerializedName("payload")
+	val payloadUpdateProfile: PayloadUpdateProfile? = null,
 
-	@field:SerializedName("status")
-	val status: Int? = null
+	@field:SerializedName("type")
+	val type: String? = null
 ) : Parcelable
