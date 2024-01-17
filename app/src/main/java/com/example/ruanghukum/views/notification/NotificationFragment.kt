@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ruanghukum.data.remote.response.PayloadItemDocumentHistory
 import com.example.ruanghukum.databinding.FragmentNotificationBinding
@@ -78,11 +79,12 @@ class NotificationFragment : Fragment() {
         binding.rvDocument.adapter = adapter
 
         adapter.setOnItemClickCallback(object : ListDocumentHistoryAdapter.OnItemClickCallback {
-            override fun onItemClicked(article: PayloadItemDocumentHistory) {
-//                val bundle = Bundle()
-//                bundle.putString(EXTRA_TITLE, article.title)
-//                bundle.putString(EXTRA_CONTENT, article.content)
-//                bundle.putString(EXTRA_IMAGE, article.image)
+            override fun onItemClicked(doc: PayloadItemDocumentHistory) {
+
+                viewModel.navigateToDocumentPreview(
+                    Navigation.findNavController(requireView()),
+                    doc.path!!
+                )
             }
         })
     }
@@ -90,5 +92,9 @@ class NotificationFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val EXTRA_DOC_PATH = "extra_doc_path"
     }
 }

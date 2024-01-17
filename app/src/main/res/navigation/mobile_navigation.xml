@@ -41,7 +41,11 @@
         android:id="@+id/navigation_notifications"
         android:name="com.example.ruanghukum.views.notification.NotificationFragment"
         android:label="@string/title_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_documentPrepPreview"
+            app:destination="@id/documentPrepPreview" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
