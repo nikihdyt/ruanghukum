@@ -82,6 +82,12 @@ class RegisterFragment : Fragment() {
                                                 email = rEmail,
                                                 name = rName,
                                                 picture = "",
+                                                address = resultState.data.data?.payload?.address ?: "",
+                                                phoneNumber = resultState.data.data?.payload?.phoneNumber ?: "",
+                                                gender = resultState.data.data?.payload?.gender ?: "",
+                                                jobTitle = resultState.data.data?.payload?.jobTitle ?: "",
+                                                idCardNumber = resultState.data.data?.payload?.idCardNumber ?: "",
+                                                birthDate = resultState.data.data?.payload?.birthDate ?: "",
                                                 token = "",
                                             )
                                         )

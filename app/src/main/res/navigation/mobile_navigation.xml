@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
     </fragment>
 
     <fragment
@@ -133,5 +136,10 @@
         android:id="@+id/articleDetailFragment"
         android:name="com.example.ruanghukum.views.article.articleDetail.ArticleDetailFragment"
         android:label="ArticleDetailFragment" />
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.ruanghukum.views.profile.update.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" />
 
 </navigation>

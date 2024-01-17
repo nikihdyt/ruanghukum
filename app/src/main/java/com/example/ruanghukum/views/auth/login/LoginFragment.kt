@@ -57,6 +57,12 @@ class LoginFragment : Fragment() {
                                         email = resultState.data.data!!.payload!!.email!!,
                                         name = resultState.data.data.payload!!.fullname!!,
                                         picture = resultState.data.data.payload.profilePicture ?: "",
+                                        address = resultState.data.data.payload.address ?: "",
+                                        phoneNumber = resultState.data.data.payload.phoneNumber ?: "",
+                                        gender = resultState.data.data.payload.gender ?: "",
+                                        jobTitle = resultState.data.data.payload.jobTitle ?: "",
+                                        idCardNumber = resultState.data.data.payload.idCardNumber ?: "",
+                                        birthDate = resultState.data.data.payload.birthDate ?: "",
                                         token = resultState.data.data.token!!
                                     )
                                 )

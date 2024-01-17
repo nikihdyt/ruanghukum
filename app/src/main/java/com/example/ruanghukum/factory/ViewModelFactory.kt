@@ -18,6 +18,7 @@ import com.example.ruanghukum.views.documentPrep.documentPrepData.DocumentPrepDa
 import com.example.ruanghukum.views.home.HomeViewModel
 import com.example.ruanghukum.views.notification.NotificationViewModel
 import com.example.ruanghukum.views.profile.ProfileViewModel
+import com.example.ruanghukum.views.profile.update.UpdateProfileViewModel
 import com.example.ruanghukum.views.updates.UpdatesViewModel
 
 class ViewModelFactory(
@@ -55,6 +56,9 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(NotificationViewModel::class.java) -> {
                 NotificationViewModel(docRepo, userRepo) as T
+            }
+            modelClass.isAssignableFrom(UpdateProfileViewModel::class.java) -> {
+                UpdateProfileViewModel(userRepo, authRepo) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
