@@ -57,6 +57,7 @@ class LoginFragment : Fragment() {
                                         email = resultState.data.data!!.payload!!.email!!,
                                         name = "",
                                         picture = "",
+                                        token = resultState.data.data!!.token!!
                                     )
                                 )
                                 showLoading(false)

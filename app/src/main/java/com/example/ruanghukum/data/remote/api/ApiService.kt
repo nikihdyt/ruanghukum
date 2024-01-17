@@ -1,7 +1,9 @@
 package com.example.ruanghukum.data.remote.api
 
+import com.example.ruanghukum.data.remote.request.DocumentLoginRequest
 import com.example.ruanghukum.data.remote.request.DocumentNotLoginRequest
 import com.example.ruanghukum.data.remote.response.AiChatResponse
+import com.example.ruanghukum.data.remote.response.DocumentLoginResponse
 import com.example.ruanghukum.data.remote.response.GetAllBlogResponse
 import com.example.ruanghukum.data.remote.response.DocumentNotLoginResponse
 import com.example.ruanghukum.data.remote.response.LoginResponse
@@ -10,6 +12,7 @@ import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Query
 
@@ -48,8 +51,16 @@ interface ApiService {
 
     @POST("document")
     suspend fun createDocumentNotLogin(
+        @Header("Authorization") token: String,
         @Query("category") category: String,
         @Body request: DocumentNotLoginRequest
     ): DocumentNotLoginResponse
+
+    @POST("document/internal")
+    suspend fun createDocumentLogin(
+        @Header("Authorization") token: String,
+        @Query("category") category: String,
+        @Body request: DocumentLoginRequest
+    ): DocumentLoginResponse
 
 }

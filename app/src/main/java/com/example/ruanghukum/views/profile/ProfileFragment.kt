@@ -38,6 +38,7 @@ class ProfileFragment : Fragment() {
                 user.email,
                 user.name,
                 user.picture,
+                user.token
             )
 
             setupView(session)

@@ -82,6 +82,7 @@ class RegisterFragment : Fragment() {
                                                 email = rEmail,
                                                 name = rName,
                                                 picture = "",
+                                                token = ""
                                             )
                                         )
                                         showLoading(false)
