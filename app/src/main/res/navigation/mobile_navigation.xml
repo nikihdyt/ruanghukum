@@ -21,9 +21,7 @@
             app:destination="@id/AIChatFragment" />
         <action
             android:id="@+id/action_navigation_home_to_articleDetailFragment"
-            app:destination="@id/articleDetailFragment"
-            app:popUpTo="@+id/navigation_home"
-            app:popUpToInclusive="true" />
+            app:destination="@id/articleDetailFragment" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_updates"
             app:destination="@id/navigation_updates"

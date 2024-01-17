@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -89,13 +88,13 @@ class HomeFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object : ListBlogAdapter.OnItemClickCallback {
             override fun onItemClicked(article: PayloadItemBlog) {
-//                val bundle = Bundle()
-//                bundle.putString(EXTRA_TITLE, article.title)
-//                bundle.putString(EXTRA_CONTENT, article.content)
-//                bundle.putString(EXTRA_IMAGE, article.image)
 
-                Navigation.createNavigateOnClickListener(R.id.action_navigation_home_to_articleDetailFragment)
-                Toast.makeText(requireContext(), article.title, Toast.LENGTH_SHORT).show()
+                viewModel.navigateToArticleDetail(
+                    Navigation.findNavController(requireView()),
+                    article.title!!,
+                    article.content!!,
+                    article.image!!
+                )
             }
         })
     }
@@ -105,9 +104,4 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    companion object {
-        const val EXTRA_TITLE = "extra_title"
-        const val EXTRA_CONTENT = "extra_content"
-        const val EXTRA_IMAGE = "extra_image"
-    }
 }
