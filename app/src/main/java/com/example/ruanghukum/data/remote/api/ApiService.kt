@@ -2,14 +2,16 @@ package com.example.ruanghukum.data.remote.api
 
 import com.example.ruanghukum.data.remote.request.DocumentNotLoginRequest
 import com.example.ruanghukum.data.remote.response.AiChatResponse
-import com.example.ruanghukum.data.remote.response.GetAllBlogResponse
+import com.example.ruanghukum.data.remote.response.DocumentHistoryResponse
 import com.example.ruanghukum.data.remote.response.DocumentNotLoginResponse
+import com.example.ruanghukum.data.remote.response.GetAllBlogResponse
 import com.example.ruanghukum.data.remote.response.LoginResponse
 import com.example.ruanghukum.data.remote.response.RegisterResponse
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Query
 
@@ -52,4 +54,8 @@ interface ApiService {
         @Body request: DocumentNotLoginRequest
     ): DocumentNotLoginResponse
 
+    @GET("document/internal")
+    suspend fun getDocumentHistory(
+        @Header("Authorization") token: String,
+    ): DocumentHistoryResponse
 }

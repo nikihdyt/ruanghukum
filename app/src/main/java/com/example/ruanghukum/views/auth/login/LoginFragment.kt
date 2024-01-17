@@ -55,8 +55,9 @@ class LoginFragment : Fragment() {
                                 viewModel.saveSession(
                                     UserModel(
                                         email = resultState.data.data!!.payload!!.email!!,
-                                        name = "",
+                                        name = resultState.data.data.payload!!.fullname!!,
                                         picture = "",
+                                        token = resultState.data.data.token!!
                                     )
                                 )
                                 showLoading(false)
