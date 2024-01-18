@@ -1,7 +1,6 @@
 package com.example.ruanghukum.views.documentPrep.documentPrepData
 
 import android.os.Bundle
-import android.provider.Settings.Global.putString
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.ruanghukum.R
 import com.example.ruanghukum.data.local.datastore.UserModel
 import com.example.ruanghukum.data.remote.request.DocumentLoginRequest
@@ -17,7 +15,6 @@ import com.example.ruanghukum.data.remote.request.DocumentNotLoginRequest
 import com.example.ruanghukum.data.remote.response.DocumentLoginResponse
 import com.example.ruanghukum.data.remote.response.DocumentNotLoginResponse
 import com.example.ruanghukum.repository.DocumentRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import retrofit2.HttpException

@@ -1,12 +1,10 @@
 package com.example.ruanghukum.views.documentPrep
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ruanghukum.R
 import com.example.ruanghukum.data.local.dummy.DocumentCategory
 import com.example.ruanghukum.databinding.ItemDocumentCategoryBinding
 

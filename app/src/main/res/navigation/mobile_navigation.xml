@@ -21,9 +21,7 @@
             app:destination="@id/AIChatFragment" />
         <action
             android:id="@+id/action_navigation_home_to_articleDetailFragment"
-            app:destination="@id/articleDetailFragment"
-            app:popUpTo="@+id/navigation_home"
-            app:popUpToInclusive="true" />
+            app:destination="@id/articleDetailFragment" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_updates"
             app:destination="@id/navigation_updates"
@@ -35,13 +33,21 @@
         android:id="@+id/navigation_updates"
         android:name="com.example.ruanghukum.views.updates.UpdatesFragment"
         android:label="@string/title_updates"
-        tools:layout="@layout/fragment_updates" />
+        tools:layout="@layout/fragment_updates" >
+        <action
+            android:id="@+id/action_navigation_updates_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.ruanghukum.views.notification.NotificationFragment"
         android:label="@string/title_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_documentPrepPreview"
+            app:destination="@id/documentPrepPreview" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -51,6 +57,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
     </fragment>
 
     <fragment
@@ -131,5 +140,10 @@
         android:id="@+id/articleDetailFragment"
         android:name="com.example.ruanghukum.views.article.articleDetail.ArticleDetailFragment"
         android:label="ArticleDetailFragment" />
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.ruanghukum.views.profile.update.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" />
 
 </navigation>

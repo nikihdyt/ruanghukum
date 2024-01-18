@@ -2,15 +2,13 @@ package com.example.ruanghukum.views.documentPrep.documentPrepData
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import com.example.ruanghukum.R
 import com.example.ruanghukum.data.local.datastore.UserModel
 import com.example.ruanghukum.data.remote.request.Biaya
 import com.example.ruanghukum.data.remote.request.BiayaLogin
@@ -23,8 +21,6 @@ import com.example.ruanghukum.data.remote.request.SewaRuko
 import com.example.ruanghukum.data.remote.request.SewaRukoLogin
 import com.example.ruanghukum.databinding.FragmentDocumentPrepDataBinding
 import com.example.ruanghukum.factory.ViewModelFactory
-import com.example.ruanghukum.utils.NetworkResultState
-import com.example.ruanghukum.views.auth.register.RegisterViewModel
 
 class DocumentPrepData : Fragment() {
 
@@ -100,7 +96,13 @@ class DocumentPrepData : Fragment() {
                 user.email,
                 user.name,
                 user.picture,
-                user.token
+                user.address,
+                user.phoneNumber,
+                user.gender,
+                user.jobTitle,
+                user.idCardNumber,
+                user.birthDate,
+                user.token,
             )
             myToken = "Bearer " + user.token
             Log.d("User Session", "$session")
@@ -226,7 +228,13 @@ class DocumentPrepData : Fragment() {
                             user.email,
                             user.name,
                             user.picture,
-                            user.token
+                            user.address,
+                            user.phoneNumber,
+                            user.gender,
+                            user.jobTitle,
+                            user.idCardNumber,
+                            user.birthDate,
+                            user.token,
                         )
                         myToken = "Bearer " + user.token
                         Log.d("User Session", "$session")

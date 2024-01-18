@@ -114,8 +114,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:paddingRight="8dp"
-            android:text="Kategori 1"
-            android:textColor="#C5C9CE"
+            android:text="Properti"
+            android:textColor="@color/text_grey"
             android:textSize="@dimen/_16ssp" />
 
         <View
@@ -227,8 +227,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:paddingRight="8dp"
-            android:text="Kategori 2"
-            android:textColor="#C5C9CE"
+            android:text="Hak Cipta"
+            android:textColor="@color/text_grey"
             android:textSize="@dimen/_16ssp" />
 
         <View

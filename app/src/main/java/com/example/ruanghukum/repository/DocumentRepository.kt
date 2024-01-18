@@ -26,6 +26,8 @@ class DocumentRepository private constructor(
         return userPreference.getSession()
     }
 
+    suspend fun getDocumentHistory(token: String) = apiService.getDocumentHistory("Bearer $token")
+
     companion object {
         @Volatile
         private var instance: DocumentRepository? = null
