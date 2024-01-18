@@ -2,13 +2,13 @@ package com.example.ruanghukum.views.documentPrep.documentPrepPreview
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.ruanghukum.R
 import com.example.ruanghukum.databinding.FragmentDocumentPrepPreviewBinding
 import com.github.barteksc.pdfviewer.util.FitPolicy
@@ -48,8 +48,8 @@ class DocumentPrepPreview : Fragment() {
         setupView()
         documentPath = arguments?.getString("documentPath")
         Log.d("documentPath", "$documentPath")
+        showSuccessDialog()
 
-        // TODO: Use the ViewModel
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -92,8 +92,10 @@ class DocumentPrepPreview : Fragment() {
     private fun setupView() {
         with(binding) {
             btnBack.setOnClickListener {
-                activity?.onBackPressed()
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_documentPrepPreview_to_documentPrepFragment)
             }
+
             btnDownload.setOnClickListener {
                 val documentUrl = arguments?.getString("documentPath")
                 if (!documentUrl.isNullOrBlank()) {
@@ -166,6 +168,11 @@ class DocumentPrepPreview : Fragment() {
         }
 
         startActivityForResult(intent, SAVE_DOCUMENT_REQUEST_CODE)
+    }
+
+    private fun showSuccessDialog() {
+        val successDialog = SuccessDialogFragment()
+        successDialog.show(childFragmentManager, SuccessDialogFragment::class.java.simpleName)
     }
 
 

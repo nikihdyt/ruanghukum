@@ -1,10 +1,12 @@
 package com.example.ruanghukum.data.remote.api
 
+import com.example.ruanghukum.data.remote.request.DocumentLoginRequest
 import com.example.ruanghukum.data.remote.request.DocumentNotLoginRequest
 import com.example.ruanghukum.data.remote.response.AiChatResponse
 import com.example.ruanghukum.data.remote.response.DocumentHistoryResponse
-import com.example.ruanghukum.data.remote.response.DocumentNotLoginResponse
+import com.example.ruanghukum.data.remote.response.DocumentLoginResponse
 import com.example.ruanghukum.data.remote.response.GetAllBlogResponse
+import com.example.ruanghukum.data.remote.response.DocumentNotLoginResponse
 import com.example.ruanghukum.data.remote.response.LoginResponse
 import com.example.ruanghukum.data.remote.response.RegisterResponse
 import com.example.ruanghukum.data.remote.response.UpdateProfileResponse
@@ -70,6 +72,7 @@ interface ApiService {
 
     @POST("document")
     suspend fun createDocumentNotLogin(
+        @Header("Authorization") token: String,
         @Query("category") category: String,
         @Body request: DocumentNotLoginRequest
     ): DocumentNotLoginResponse
@@ -78,4 +81,12 @@ interface ApiService {
     suspend fun getDocumentHistory(
         @Header("Authorization") token: String,
     ): DocumentHistoryResponse
+
+    @POST("document/internal")
+    suspend fun createDocumentLogin(
+        @Header("Authorization") token: String,
+        @Query("category") category: String,
+        @Body request: DocumentLoginRequest
+    ): DocumentLoginResponse
+
 }

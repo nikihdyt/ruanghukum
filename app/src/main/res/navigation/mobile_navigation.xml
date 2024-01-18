@@ -131,6 +131,10 @@
         android:label="fragment_document_prep_data"
         tools:layout="@layout/fragment_document_prep_data">
 
+        <action
+            android:id="@+id/action_documentPrepPreview_to_documentPrepFragment"
+            app:destination="@id/documentPrepFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/articleDetailFragment"
