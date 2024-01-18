@@ -75,7 +75,7 @@
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lorem Ipsum"
+                    android:text="Panduan Dokumen"
                     android:fontFamily="@font/work_sans_medium"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -89,7 +89,7 @@
                     android:layout_marginTop="6dp"
                     android:maxLines="2"
                     android:fontFamily="@font/work_sans_reguler"
-                    android:text="@string/dummy_text"
+                    android:text="@string/title_banner"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_title" />
@@ -114,7 +114,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_marginVertical="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,7 +130,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/documentPrepBanner" />
+
+
     </com.google.android.material.card.MaterialCardView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

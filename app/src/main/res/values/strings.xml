@@ -8,6 +8,7 @@
     <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet leo tincidunt nisl congue egestas.</string>
     <string name="dummy_text_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus ante velit, quis rhoncus dui vulputate sed. Pellentesque ut eleifend odio. Vestibulum porttitor, libero eu mollis placerat, dolor ipsum euismod sapien, vitae mollis elit nisl at lorem. Duis condimentum dapibus magna, vitae elementum dui. Nam gravida, dolor quis sagittis facilisis, libero libero fermentum sem, a sollicitudin tortor eros eget dui. Proin sit amet sapien sed nunc placerat finibus eu in lorem. Nunc sed luctus tortor. Ut a finibus erat. Phasellus ut suscipit diam. Aliquam fringilla nisl a leo consequat sagittis. Suspendisse sit amet est a lectus porta finibus. Nullam magna purus, euismod id nisi et, bibendum pharetra risus. Proin commodo porta justo vitae ullamcorper.</string>
     <string name="title_consultation">Konsultasi dengan Ahli</string>
+    <string name="title_banner">Panduan membuat dokumen secara otomatis.</string>
 
     <string-array name="genders">
         <item>Perempuan</item>

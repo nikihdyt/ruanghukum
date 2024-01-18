@@ -40,6 +40,7 @@ object Injection {
 
     fun provideDocRepository(context: Context): DocumentRepository {
         val apiService = ApiConfig.getApiService(context)
-        return DocumentRepository.getInstance(apiService)
+        val pref = UserPreferences.getInstance(context.dataStore)
+        return DocumentRepository.getInstance(apiService, pref)
     }
 }
