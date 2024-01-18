@@ -38,6 +38,13 @@ class ProfileFragment : Fragment() {
                 user.email,
                 user.name,
                 user.picture,
+                user.address,
+                user.phoneNumber,
+                user.gender,
+                user.jobTitle,
+                user.idCardNumber,
+                user.birthDate,
+                user.token,
             )
 
             setupView(session)
@@ -76,6 +83,10 @@ class ProfileFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             viewModel.logout()
         }
+
+        binding.btnEditProfile.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_navigation_profile_to_updateProfileFragment)
+        )
     }
 
 }

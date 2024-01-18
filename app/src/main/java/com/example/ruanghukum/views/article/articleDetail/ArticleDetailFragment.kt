@@ -1,6 +1,7 @@
 package com.example.ruanghukum.views.article.articleDetail
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.ruanghukum.R
 import com.example.ruanghukum.databinding.FragmentArticleDetailBinding
-import com.example.ruanghukum.views.home.HomeFragment
 
 class ArticleDetailFragment : Fragment() {
 
@@ -26,18 +26,26 @@ class ArticleDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        setupView()
+        val title = arguments?.getString("extra_title")
+        val content = arguments?.getString("extra_content")
+        val image = arguments?.getString("extra_image")
+        setupView(title!!, content!!, image!!)
     }
 
-    private fun setupView() {
+    private fun setupView(
+        title: String,
+        content: String,
+        image: String
+    ) {
+        Log.d("DEBUG", "setupView: $image")
         with(binding) {
-            tvTitle.text = arguments?.getString(HomeFragment.EXTRA_TITLE)
-            tvContent.text = arguments?.getString(HomeFragment.EXTRA_CONTENT)
             Glide.with(root)
-                .load(arguments?.getString(HomeFragment.EXTRA_IMAGE))
+                .load(image)
                 .placeholder(R.drawable.baseline_account_circle_24)
                 .error(R.drawable.baseline_account_circle_24)
-                .into(image)
+                .into(img)
+            tvTitle.text = title
+            tvContent.text = content
 
             btnBack.setOnClickListener {
                 activity?.onBackPressed()

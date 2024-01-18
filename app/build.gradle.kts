@@ -80,4 +80,8 @@ dependencies {
     //chucker
     debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
     releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+
+    //lottie files
+    implementation ("com.airbnb.android:lottie:3.4.2")
+
 }
