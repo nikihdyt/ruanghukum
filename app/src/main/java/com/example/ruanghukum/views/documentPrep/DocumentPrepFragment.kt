@@ -22,10 +22,10 @@ class DocumentPrepFragment : Fragment() {
     )
 
     private val categories2 = listOf(
-        DocumentCategory(1, "Crime Review"),
-        DocumentCategory(2, "Commercial Offences"),
-        DocumentCategory(3, "Corruption Cases"),
-        DocumentCategory(4, "Edical Negligence\nCases")
+        DocumentCategory(1, "Formulir Pencatatan Lisensi"),
+        DocumentCategory(2, "Surat Pengalihan Hak Cipta"),
+        DocumentCategory(3, "Perubahan Nama Hak Cipta"),
+        DocumentCategory(4, "Surat Ket UMK")
     )
 
     override fun onCreateView(
