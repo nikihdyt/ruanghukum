@@ -67,6 +67,7 @@ class DocumentPrepData : Fragment() {
                         it
                     )
                     resetForm()
+                    super.onDestroyView()
 
                 }
             }

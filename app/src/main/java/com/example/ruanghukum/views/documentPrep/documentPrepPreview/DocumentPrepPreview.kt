@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.ruanghukum.R
 import com.example.ruanghukum.databinding.FragmentDocumentPrepPreviewBinding
 import com.github.barteksc.pdfviewer.util.FitPolicy
@@ -94,8 +95,10 @@ class DocumentPrepPreview : Fragment() {
     private fun setupView() {
         with(binding) {
             btnBack.setOnClickListener {
-                activity?.onBackPressed()
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_documentPrepPreview_to_documentPrepFragment)
             }
+
             btnDownload.setOnClickListener {
                 val documentUrl = arguments?.getString("documentPath")
                 if (!documentUrl.isNullOrBlank()) {
